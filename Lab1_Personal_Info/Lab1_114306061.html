@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>About -- 114306061</title>
+</head>
+<body>
+<form action="#">
+    <table border="1">
+
+        <tr>
+            <td colspan="3" align="center">
+                About -- 114306061
+            </td>
+        </tr>
+
+        <tr>
+            <td rowspan="3">
+                <img src="personal_photo.png" alt="personal photo" width="100"><br>
+                <p>personal photo</p>
+            </td>
+
+            <td colspan="2">
+                Name: <input type="text" name="name" value="Ann"><br><br>
+                Gender:
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female" checked>
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="Other">
+                <label for="other">Other</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                County:
+                <select name="county" id="county">
+                    <option value="Taipei" selected>Taipei</option>
+                    <option value="Tainan">Tainan</option>
+                    <option value="Taichung">Taichung</option>
+                    <option value="Taoyuan">Taoyuan</option>
+                </select>
+            </td>
+
+            <td>
+                Birthday: <input type="date" name="birthday" value="2006-10-17">
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                E-mail: <input type="email" name="email" value="114306061@g.nccu.edu">
+            </td>
+        </tr>
+        
+        <tr>
+            <td>Hobby</td> 
+            <td>
+                <input type="checkbox" id="swimming" name="hobby" value="Swimming">
+                <label for="swimming">Swimming</label>
+                <input type="checkbox" id="volleyball" name="hobby" value="Volleyball">
+                <label for="volleyball">Volleyball</label>
+                <input type="checkbox" id="movie" name="hobby" value="Movie">
+                <label for="movie">Movie</label>
+                <input type="checkbox" id="game" name="hobby" value="Game">
+                <label for="game">Game</label>
+                <input type="checkbox" id="sleep" name="hobby" value="sleep" checked>
+                <label for="sleep">sleep</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Skill</td>
+            <td>
+                <input type="checkbox" id="java" name="skill" value="Java" checked>
+                <label for="java">Java</label>
+                <input type="checkbox" id="html" name="HTML" value="HTML">
+                <label for="html">HTML</label>
+                <input type="checkbox" id="python" name="skill" value="Python">
+                <label for="python">Python</label>
+                <input type="checkbox" id="office" name="skill" value="Microsoft Office">
+                <label for="office">Microsoft Office</label>
+                <input type="checkbox" id="premiere" name="skill" value="Premiere">
+                <label for="premiere">Premiere</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Say Something</td>
+            <td>
+                <textarea name="say_something" rows="4" cols="50" placeholder="Say something here."></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3" align="center">
+                <input type="submit" value="提交">
+                <input type="reset" value="重設">
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
