@@ -1,0 +1,133 @@
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header-container {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.page-title {
+    font-family: 'Georgia', serif;
+    font-size: 2.5em;
+    margin: 0;
+    color: white;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    margin: 0;
+    padding-top: 5px;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #2c3e50;
+    position: relative; 
+    top: 0em; 
+    left: 0em; 
+    width: 100%; 
+    line-height: 1; 
+    z-index: 5;
+
+    display: flex; 
+    justify-content: space-around; 
+}
+
+.navbar li {
+    flex: 1; 
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center; 
+    padding: 12px 0; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar li a:hover:not(.dropbtn) {
+    background-color: #555;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    z-index: 10;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #34495e; 
+    min-width: 180px; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 200; 
+    margin-top: 0; 
+    top: 100%; 
+    left: 30%; 
+    text-align: left;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-weight: normal; 
+}
+
+.dropdown-content a:hover {
+    background-color: #2c3e50;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block !important; 
+}
+
+.main-content {
+    padding: 20px;
+    line-height: 1.6;
+    text-align: left; 
+}
+
+.main-content a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+@media all {
+    .header-container, .navbar {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .main-content {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+}
+
+@media print {
+    .navbar, .header-container {
+        display: none;
+    }
+    
+    body {
+        background-color: white;
+        color: black;
+        font-size: 12pt;
+    }
+    
+    .main-content {
