@@ -1,0 +1,247 @@
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #eeede1; 
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.main-container {
+    width: 1000px;
+    background-color: #ffffff;
+    display: flex;
+    border-radius: 10px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+}
+
+.left-panel {
+    width: 30%;
+    background-color: #5587a8;
+    color: white;
+    padding: 20px;
+}
+
+.right-panel {
+    width: 70%;
+    padding: 40px;
+}
+
+.photo-panel {
+    margin-bottom: 20px;
+    border-radius: 5px; 
+    overflow: hidden;
+}
+
+.name {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.title {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.about-me-text {
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.left-panel .section-title {
+    font-size: 1.2em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.contact-list {
+    list-style: none;
+    margin-bottom: 30px;
+    padding-left: 0;
+}
+
+.contact-list li a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-list li a:hover {
+    text-decoration: underline;
+}
+
+.icon-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.nccu-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.right-panel .section-title {
+    font-size: 1.8em;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333333;
+}
+
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 10px;
+    gap: 20px;
+    line-height: 1.5;
+}
+
+.timeline-item .year {
+    font-weight: bold;
+    color: #5587a8;
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.timeline-item .description {
+    color: #333;
+}
+
+
+.skill-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: -5px;
+}
+
+.tag {
+    display: inline-block; 
+    padding: 5px 10px; 
+    border-radius: 5px;
+    background-color: #f0f0f0; 
+    color: #333333; 
+    font-size: 0.9em;
+}
+
+
+.hw-lab-section .section-title {
+    margin-bottom: 15px;
+}
+
+.hw-lab-container {
+    display: flex;
+    gap: 20px;
+}
+
+.hw-column, .lab-column {
+    flex: 1;
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.hw-column h3, .lab-column h3 {
+    margin-bottom: 10px;
+    color: #333333;
+    margin-top: 0;
+}
+
+.hw-column ul, .lab-column ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.hw-column li, .lab-column li {
+    margin-bottom: 5px;
+}
+
+.hw-column a, .lab-column a {
+    color: #5587a8;
+    text-decoration: none;
+}
+
+.hw-column a:hover, .lab-column a:hover {
+    color: #2a4455;
+    text-decoration: underline;
+}
+
+
+.music-row {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.music-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #333333;
+    flex-basis: 22%;
+}
+
+.music-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+
+.song-title {
+    font-size: 0.9em;
+    line-height: 1.2;
+}
+
+.music-note {
+    font-style: italic;
+    color: #666;
+    border-top: none; 
+    padding-top: 10px;
+    font-size: 0.9em;
+}
+
+.section-title {
+    border-bottom: 2px solid #000;
+    padding-bottom: 4px;
+    margin-bottom: 12px;
+    width: 100%;
+    display: block;
+}
+
+.skill-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: -5px;
+}
+
+.tag {
+    display: inline-block; 
+    padding: 5px 10px; 
+    border-radius: 5px;
+    background-color: #f0f0f0; 
+    color: #333333; 
+    font-size: 0.9em;
+}
