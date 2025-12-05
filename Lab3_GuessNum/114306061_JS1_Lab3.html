@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>114306061_Number Guessing Game</title>
+    <style>
+        #result-display {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            margin-top: 20px;
+        }
+        #result-display img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header-title">114306061_Number Guessing Game</h1>
+
+    <div id="result-display"></div>
+
+    <script>
+        const MAX_ATTEMPTS = 7;
+        const MIN_RANGE = 1;
+        const MAX_RANGE = 100;
+
+        const ANSWER = Math.floor(Math.random() * 100) + 1;
+        let chances = MAX_ATTEMPTS;
+        let gameActive = true;
+
+        function startGame() {
+            while (chances > 0 && gameActive) {
+                const promptMessage = `請輸入${MIN_RANGE}到${MAX_RANGE}之間的整數。\n你還有${chances}次機會。`;
+                
+                let input = window.prompt(promptMessage);
+
+                if (input === null) {
+                    gameActive = false;
+                    break;
+                }
+
+                const trimmedInput = input.trim();
+                if (trimmedInput === "" || isNaN(trimmedInput)) {
+                    window.alert("無效輸入！請輸入一個數字。");
+                    continue;
+                }
+
+                const guess = Number(trimmedInput);
+
+                if (guess < MIN_RANGE || guess > MAX_RANGE) {
+                    window.alert(`請輸入有效範圍內的數字(不能超出${MIN_RANGE}到${MAX_RANGE})!`);
+                    continue;
+                }
+
+                chances--;
+
+                if (guess === ANSWER) {
+                    window.alert(`恭喜你答對了!正確答案是${ANSWER}`);
+                    
+                    document.getElementById('result-display').innerHTML = '<img src="correct.jpg" alt="Correct Guess">';
+                    
+                    gameActive = false;
+                } else if (chances === 0) {
+                    window.alert(`你沒有機會了。正確答案是${ANSWER}。`);
+
+                    document.getElementById('result-display').innerHTML = '<img src="wrong.jpg" alt="Wrong Guess">';
+                    
+                    gameActive = false;
+                } else if (guess < ANSWER) {
+                    window.alert("太小了，再試一次。");
+                } else {
+                    window.alert("太大了，再試一次。");
+                }
+            }
+        }
+
+        startGame();
+
+        if (!gameActive) {
+            console.log("遊戲結束。");
+        }
+    </script>
+</body>
+</html>
