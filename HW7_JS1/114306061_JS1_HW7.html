@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1A2B 猜數字遊戲</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #game-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        #controls input {
+            padding: 10px;
+            margin-right: 10px;
+            font-size: 16px;
+            width: 80px;
+            text-align: center;
+        }
+        #controls button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #record {
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+        .record-item {
+            margin-bottom: 5px;
+            padding: 5px;
+            border-bottom: 1px dotted #ccc;
+        }
+        .correct-guess {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>114306061_HW7_1A2B</h1>
+        <p>請輸入 4 個不重複的數字 (0-9) 來猜測密碼：</p>
+
+        <div id="controls">
+            <input type="text" id="guess-input" maxlength="4" placeholder="例如: 1234">
+            <button onclick="play()">Guess!</button>
+        </div>
+
+        <div id="record">
+            <h2>Game Record:</h2>
+        </div>
+    </div>
+
+    <script>
+        let answer = generateAnswer();
+        let attempts = 0;
+        const guessInput = document.getElementById('guess-input');
+        const recordArea = document.getElementById('record');
+        function generateAnswer() {
+            let digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            let code = [];
+            while (code.length < 4) {
+                const randomIndex = Math.floor(Math.random() * digits.length);
+                const selectedDigit = digits[randomIndex];
+                code.push(selectedDigit);
+                digits.splice(randomIndex, 1); 
+            }
+            return code.join(''); 
+        }
+
+        function isValid(str) {
+            if (str.length !== 4 || isNaN(str)) {
+                alert("錯誤：請輸入剛好 4 個數字！");
+                return false;
+            }
+
+            const digitSet = new Set(str);
+            if (digitSet.size !== 4) {
+                alert("錯誤：請輸入 4 個不重複的數字！");
+                return false;
+            }
+
+            return true;
+        }
+
+        function checkAB(guess, ans) {
+            let bulls = 0; // A
+            let cows = 0; // B
+
+            for (let i = 0; i < 4; i++) {
+                if (guess[i] === ans[i]) {
+                    bulls++;
+                } else if (ans.includes(guess[i])) {
+                    cows++;
+                }
+            }
+            return `${bulls}A${cows}B`;
+        }
+
+        function play() {
+            const input = guessInput.value.trim();
+            guessInput.value = "";
+
+            if (!isValid(input)) {
+                return; 
+            }
+
+            attempts++;
+            
+            const result = checkAB(input, answer);
+
+            const recordItem = document.createElement('div');
+            recordItem.classList.add('record-item');
+            recordItem.innerHTML = `第 ${attempts} 次: ${input} → ${result}`;
+            recordArea.appendChild(recordItem);
+
+            if (result === '4A0B') {
+                recordItem.classList.add('correct-guess');
+                alert(`恭喜你猜對了！正確答案是 ${answer}。\n你總共猜了 ${attempts} 次。`);
+                
+                guessInput.disabled = true;
+                document.querySelector('#controls button').disabled = true;
+
+            }
+        }
+    </script>
+</body>
+</html>
