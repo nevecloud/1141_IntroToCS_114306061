@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Grade Statistics</title>
+    <link rel="stylesheet" href="114306061_JS2_Lab4.css">
+</head>
+<body>
+
+    <h1>Grade Statistics</h1>
+
+    <div class="input-form">
+        <label for="mathGrade">Math:</label>
+        <input type="number" id="mathGrade" min="0" max="100" required>
+        <label for="englishGrade">English:</label>
+        <input type="number" id="englishGrade" min="0" max="100" required>
+        <button id="submitBtn">Submit</button>
+    </div>
+
+    <table id="gradeTable">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Math</th>
+                <th>English</th>
+                <th>Average</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+        <tfoot>
+            <tr id="averageRow" style="display: none;">
+                <th>Average</th>
+                <td id="avgMath">N/A</td>
+                <td id="avgEnglish">N/A</td>
+                <td id="avgOverall">N/A</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script src="114306061_JS2_Lab4.javascript"></script>
+
+</body>
+</html>
